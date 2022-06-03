@@ -14,11 +14,8 @@ class Post extends Model {
                 attributes: [
                     'id',
                     'title',
-                    'created_at',
-                    [
-                        sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
-                        'vote_count'
-                    ]
+                    'content',
+                    'created_at'
                 ]
             });
         });
@@ -36,6 +33,10 @@ Post.init(
         },
         title: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        content: {
+            type: DataTypes.TEXT,
             allowNull: false
         },
         user_id: {

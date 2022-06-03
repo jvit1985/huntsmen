@@ -11,8 +11,8 @@ router.get('/', withAuth, (req, res) => {
         attributes: [
             'id',
             'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id}'), 'vote_count']
+            'content',
+            'created_at'
         ],
         include: [
             {
@@ -48,6 +48,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         attributes: [
             'id',
             'title',
+            'content',
             'created_at'
         ],
         include: [
@@ -84,6 +85,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+router.get('/new', (req, res) => {
+    res.render('new-post');
 });
 
 module.exports = router;
