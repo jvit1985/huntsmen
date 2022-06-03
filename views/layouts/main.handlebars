@@ -5,33 +5,49 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rack Em Up</title>
-        <link rel="stylesheet" href="stylesheets/homepage.css">
+        <!-- CSS only -->
+        
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- add easay change to bootstrap css here-->
+<style>
+.nav_image{
+    background-image: url(/stylesheets/american-flag-usa-gun-assault-rifle-wallpaper-preview.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    background-position: center center;
+}
+body{
+    background-color: bisque;
+}
+</style>
     </head>
 
     <body>
-        <div class="pageWrapper">
-            <section class="logoBanner"
-            <header class="navBar">
+       <nav class="navbar navbar-expand-md navbar-light bg-dark nav_image">
+                <section class="navItems">
                 <h1>
-                    <a href="/">Rack Em Up</a>
+                    <button href="/" class="btn btn-link btn-outline-info">Rack Em Up</button>
                 </h1>
-                <a href="/dashboard">Dashboard</a>
-                     <a href="/">Home</a>
-                    {{#if loggedIn}}
-                    <a href="/" id="logout">Logout</a>
-                    {{else}}
-                    <a href="/login">Login</a>
-                    {{/if}}
-                </nav>   <nav>
                 
-            </header>
+                <button class="btn btn-link btn-outline-danger" href="/dashboard">Dashboard</button>
+                     <button class="btn btn-link btn-outline-success" href="/">Home</button>
+                    {{#if loggedIn}}
+                    <button class="btn btn-link btn-outline-primary" href="/" id="logout">Logout</button>
+                    {{else}}
+                    <button class="btn btn-link btn-primary btn-sm" href="/login">Login</a>
+                    {{/if}}
+                </section>
+                
+            </nav>
+            <br>
             <main>
                 {{{ body }}}
             </main>
             <footer>
                 Thanks for visiting!
             </footer>
-        </div>
+       
         {{#if loggedIn}}
         <script src="/javascript/logout.js"></script>
         {{/if}}
