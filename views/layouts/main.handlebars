@@ -27,13 +27,13 @@ body{
        <nav class="navbar navbar-expand-md navbar-light bg-dark nav_image">
                 <section class="navItems">
                 <h1>
-                    <button href="/" class="btn btn-link btn-outline-info">Rack Em Up</button>
+                    <a href="/" class="btn btn-link btn-outline-info" role="button">Rack Em Up</a>
                 </h1>
                 
-                <button class="btn btn-link btn-outline-danger" href="/dashboard">Dashboard</button>
-                     <button class="btn btn-link btn-outline-success" href="/">Home</button>
+                <a class="btn btn-link btn-outline-danger" role="button" href="/dashboard">Dashboard</a>
+                     <a role="button" class="btn btn-link btn-outline-success" href="/">Home</a>
                     {{#if loggedIn}}
-                    <button class="btn btn-link btn-outline-primary" href="/" id="logout">Logout</button>
+                    <a role="button" class="btn btn-link btn-outline-primary" href="/" id="logout">Logout</a>
                     {{else}}
                     <button class="btn btn-link btn-primary btn-sm" href="/login">Login</a>
                     {{/if}}
