@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
         //Query configuration
         attributes: [
             'id', 
-            'title', 
+            'title',
+            'content', 
             'created_at'
         ],
         order: [['created_at', 'DESC']],
@@ -43,7 +44,8 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id', 
-            'title', 
+            'title',
+            'content', 
             'created_at'
         ],
         include: [
@@ -77,6 +79,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
+        content: req.body.content,
         user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
@@ -102,7 +105,8 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            content: req.body.content
         },
         {
             where: {
