@@ -1,23 +1,26 @@
-{{> post-info post}}
-
+<article class="post">
+    {{> post-info post}}
+    <div class="meta">
+        {{post.vote_count}} point(s) by {{post.user.username}} on
+        {{post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+    </div>
+</article>
 {{#if loggedIn}}
-<div class="card">
-    <h3 class="card-header"></h3>
-    <form class="card-body comment-form" id="comment-form">
-
-        <label class="form-label">Comment</label>
-        <input id="comment" name="comment-body" class="form-input" />
+<form class="comment-form">
     <div>
-        <button type="submit" class="comment-btn">Add Comment</button>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Add Comment</button>
         <button type="button" class="upvote-btn">Upvote</button>
     </div>
-    </form>
-</div>
+</form>
 {{/if}}
-
 {{> comments post.comments}}
-
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="'/javascript/upvote.js"></script>
+<script src="/javascript/upvote.js"></script>
 {{/if}}
