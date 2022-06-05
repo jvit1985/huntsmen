@@ -11,14 +11,21 @@
 <!-- add easay change to bootstrap css here-->
 <style>
 .nav_image{
-    background-image: url(/stylesheets/american-flag-usa-gun-assault-rifle-wallpaper-preview.jpeg);
+    background-image: url(/stylesheets/ducker.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 300px;
-    background-position: center center;
+    background-position: center;
+    background-blend-mode: exclusion;
 }
 body{
-    background-color: bisque;
+    background-image: url(/stylesheets/dark-abstract-gradient-background-with-black-vector-28388003.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.post-list{
+    align-content: center;
 }
 </style>
     </head>
@@ -27,15 +34,17 @@ body{
        <nav class="navbar navbar-expand-md navbar-light bg-dark nav_image">
                 <section class="navItems">
                 <h1>
-                    <a href="/" class="btn btn-link btn-outline-info" role="button">Rack Em Up</a>
+                    <a href="/" class="btn btn-link text-white bg-dark btn-lg" role="button">Rack Em Up</a>
                 </h1>
                 
-                <a class="btn btn-link btn-outline-danger" role="button" href="/dashboard">Dashboard</a>
-                     <a role="button" class="btn btn-link btn-outline-success" href="/">Home</a>
+                <a class="btn btn-link bg-dark text-white btn-lg" role="button" href="/dashboard">Dashboard</a>
+                     <a role="button" class="btn btn-link bg-dark text-white btn-lg" href="/">Home</a>
                     {{#if loggedIn}}
-                    <a role="button" class="btn btn-link btn-outline-primary" href="/" id="logout">Logout</a>
+                    <a role="button" class="btn btn-link bg-dark text-white btn-lg" href="/" id="logout">Logout</a>
                     {{else}}
-                    <a role="button" class="btn btn-link btn-primary btn-sm" href="/login">Login</a>
+
+                    <a role="button" class="btn btn-link bg-dark text-white btn-lg" href="/login">Login</a>
+
                     {{/if}}
                 </section>
                 
