@@ -29,8 +29,6 @@
 
         .post-list {
             align-content: center;
-            margin-left: 400px;
-            margin-right: 400px;
             border: thick solid white;
             border-radius: 45px;
             color: tan;
@@ -39,16 +37,24 @@
         .navig{
         display: flex;
         align-items: flex-start;
-        justify-content: flex-end;
+        }
+        .toolbar{
+            display: contents;
+        }
+        .advert1{
+            border-radius: 45px;
+            border: thick solid teal;
+            color: aliceblue;
         }
     </style>
 </head>
 
 <body>
     <nav class=" navig navbar navbar-expand-md navbar-light bg-dark nav_image">
-
+<img src="/stylesheets/Red Modern and Minimalist Social Media Marketing Agency Website (200 × 200 px).png" alt="logo" class="img-thumbnail rounded float-left">
+<section class="toolbar">
         <h1>
-            <a href="/" class="btn btn-link text-white bg-dark btn-lg" role="button">Rack Em Up</a>
+            <a href="/" class="btn btn-link text-white bg-dark btn-lg" role="button">The Huntsmen</a>
         </h1>
          <h1>
         <a class="btn btn-link bg-dark text-white btn-lg" role="button" href="/dashboard">Dashboard</a>
@@ -61,14 +67,22 @@
         <a role="button" class="btn btn-link bg-dark text-white btn-lg" href="/login">Login</a>
          </h1>
         {{/if}}
-
+</section>
 
     </nav>
     <br>
-    <main>
-        <div class="col-4"></div>
+    <main class="container-fluid">
+        <div class="row">
+        <div class="col advert1"> 
+            <h1>Find A State Park Near You</h1>
+        </div>
+        <div class="col-6">
         {{{ body }}}
-        <div class="col-4"></div>
+        </div>
+        <div class="col" style="background-color: white;">
+            <h1>Check Out Your Local Outfitter</h1>
+        </div>
+        </div>
     </main>
     <footer>
         Thanks for visiting!
