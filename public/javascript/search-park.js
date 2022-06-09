@@ -11,11 +11,23 @@ const searchParkHandler = function () {
     .then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
+                console.log(data);
                 var stateParks = [];
+                var parkWeb = [];
                 for (let i = 0; i < data.total; i++) {
                     stateParks[i] = data.data[i].fullName;
+                    parkWeb[i] = data.data[i].url;
+                    
                     var stateParkName = document.createElement("p");
+                    var parkWebSite = document.createElement("a");
+                    var linkText = document.createTextNode("State Park Website");
+                    parkWebSite.appendChild(linkText);
+                    parkWebSite.title = "State Park Website";
+                    parkWebSite.target = "_blank"
+                    parkWebSite.href = parkWeb[i]
                     stateParkName.textContent = stateParks[i];
+                    
+                    stateParkName.appendChild(parkWebSite);
                     parkNameEl.appendChild(stateParkName);
                 }
             });
