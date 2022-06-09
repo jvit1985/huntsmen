@@ -21,7 +21,7 @@
         }
 
         body {
-            background-image: url(/stylesheets/dark-abstract-gradient-background-with-black-vector-28388003.jpeg);
+            background-image: url(/stylesheets/pageback3.png);
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
@@ -45,6 +45,29 @@
             border-radius: 45px;
             border: thick solid teal;
             color: aliceblue;
+            padding: 0px;
+        }
+        .advert2{
+            border-radius: 45px;
+            border: thick solid teal;
+            padding: 0px;
+            color: aliceblue;
+        }
+        .advertban1{
+            background-image: url(/stylesheets/advertban1.png);
+            background-size: cover;
+            min-height: 125px;
+            border-radius: 40px;
+        }
+        .advertban2{
+            background-image: url(/stylesheets/advertban2.png);
+            background-size: cover;
+            min-height: 125px;
+            border-radius: 40px;
+        }
+        footer{
+            border: solid thick tan;
+            border-radius: 45px;
         }
     </style>
 </head>
@@ -74,8 +97,11 @@
     <main class="container-fluid">
         <div class="row">
         <div class="col advert1"> 
+            <section class="advertban1">
+            </section>
+            <br>
             <h1>Find A State Park Near You</h1>
-            <input name="search-park" type="text" class="search-park" placeholder="Zip Code" id="parks">
+            <input name="search-park" type="text" class="search-park" placeholder="Enter State Code(Tx)" id="parks">
             <button class="search-park-btn">Search</button>
         <div>
 
@@ -86,15 +112,22 @@
         <div class="col-6">
         {{{ body }}}
         </div>
-        <div class="col" style="background-color: white;">
+        <div class="col advert2">
+            <section class="advertban2">
+             </section>
+             <br>
             <h1>Check Out Your Local Outfitter</h1>
-            <input name="search-outfitter" type="text" class="search-outfitter" placeholder="Zip Code">
+            <input name="search-outfitter" type="text" class="search-outfitter" placeholder="Enter Zip Code">
             <button class="search-outfitter-btn">Search</button>
         </div>
         </div>
     </main>
     <footer style="color: tan;">
         Thanks for visiting!
+        <h3>Made By:</h3>
+        <H4>Brandon Velarde. To view Github Account<a href="https://github.com/BrandonDaws"> Click Here</a></H4>
+        <H4>Justin Vititoe. To view Github Account<a href="https://github.com/jvit1985"> Click Here</a></H4>
+        <H4>Justin Wright. To view Github Account<a href="https://github.com/BrandonDaws"> Click Here</a></H4>
     </footer>
 
     {{#if loggedIn}}
