@@ -21,6 +21,11 @@
   Here are the installation instructions for this project:
   Install the project by pulling from github then put in your mysql database name, username, and password in a .env file. Type npm start and the project will turn on     the server. Go to localhost:3001 in your browser to view and use the site.
   
+  ScreenShot:
+  ![screencapture-huntsmen-herokuapp-2022-06-12-13_09_47](https://user-images.githubusercontent.com/54601156/173247219-8ad2f5fb-a7d1-4c3f-bfe5-c100d8b8732c.jpg)
+
+  Deployed Application: https://huntsmen.herokuapp.com/
+  
 
   ## Usage
   Here are the instructions and examples of how to use this project:
